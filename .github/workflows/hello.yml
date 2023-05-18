@@ -8,6 +8,7 @@ on:
 
 jobs:
   hello_world_job:
+    if: ${{ false }}  # disable for now
     runs-on: ubuntu-20.04
     steps:
       - name: Say hello
