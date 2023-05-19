@@ -7,14 +7,11 @@ app = "pokedex-lauri"
 primary_region = "arn"
 
 [http_service]
-  internal_port = 8080
-  auto_stop_machines = true
-  auto_start_machines = true
-  min_machines_running = 0
+  internal_port = 3000
   processes = ["app"]
 
 [env]
-  PORT = "8080"
+  PORT = "3000"
 
 [deploy]
   release_command = "npm run build"
@@ -31,3 +28,14 @@ primary_region = "arn"
 
 [experimental]
   auto_rollback = true
+
+[[services.http_checks]]
+    interval = 10000
+    grace_period = "5s"
+    method = "get"
+    path = "/health"
+    protocol = "http"
+    restart_limit = 0
+    timeout = 2000
+    tls_skip_verify = false
+    [services.http_checks.headers]
