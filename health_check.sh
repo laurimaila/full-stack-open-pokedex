@@ -1,5 +1,12 @@
 #!/bin/bash
 
-echo "Hello from shell script"
+res=$(curl -s https://pokedex-lauri.fly.dev/health)
 
-exit 1 # exit status 1 means that the script "fails"
+if [ "$res" == "ok" ]; then
+  echo "Succeeded curl to /health but failed on purpose"
+  exit 1
+fi
+
+echo "Failed curl to /health"
+# 0: OK, 1: Bad.
+exit 1
