@@ -11,7 +11,7 @@ app.get('/health', (req, res) => {
 })
 
 app.get('/version', (req, res) => {
-  res.send('PR not merged yet')
+  res.send('11.14 done')
 })
 
 app.listen(PORT, () => {
