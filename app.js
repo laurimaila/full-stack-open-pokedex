@@ -11,7 +11,7 @@ app.get('/health', (req, res) => {
 })
 
 app.get('/version', (req, res) => {
-  res.send('20.5.2023 14:40')
+  res.send('PR not merged yet')
 })
 
 app.listen(PORT, () => {
