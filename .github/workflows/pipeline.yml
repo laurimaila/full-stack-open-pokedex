@@ -37,6 +37,7 @@ jobs:
         with:
           severity: error
           text: Build failed
+          description: Commit https://github.com/laurimaila/full-stack-open-pokedex/commit/${{ github.sha }} by ${{ github.actor }} broke the build :(
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
 
   deploy:
