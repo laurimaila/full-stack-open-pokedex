@@ -55,9 +55,8 @@ jobs:
         if: success()
         with:
           severity: info
-          description:
+          description: to https://pokedex-lauri.fly.dev/ by laurimaila
           text: A new version of Pokedex deployed
-          details: to https://pokedex-lauri.fly.dev/ by laurimaila
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
 
   tag_release:
